@@ -27,7 +27,7 @@ export default function PanelComponent ({children, title, icon, index, callback}
   return (
     <Fragment>
       <div
-        className="w-full h-12 flex items-center justify-between px-4 rounded-md bg-gradient-to-r from-primary to-secondary cursor-pointer mt-6"
+        className="w-full h-12 flex items-center justify-between px-4 rounded-md bg-gradient-to-r from-primary to-secondary cursor-pointer mt-6 transition-all duration-[0.4s]"
         onClick={handlePanelClick}
       >
         <span className="text-white text-lg font-space-grotesk">
@@ -42,7 +42,7 @@ export default function PanelComponent ({children, title, icon, index, callback}
       </div>
       {
         children && panelState ? 
-        <slot className="transition-all duration-[0.4s]">{children}</slot> : 
+        <slot className="transition-all duration-[0.4s]"><div className="transition-all duration-[0.4s]"></div>{children}</slot> : 
         <slot></slot>
       }
     </Fragment>
